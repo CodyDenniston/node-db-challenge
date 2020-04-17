@@ -1,19 +1,19 @@
 const db = require('../../data/db-config');
 
 const find = () => {
-	return db('Projects');
+	return db('Tasks');
 };
 
 const findTaskDetailed = () => {
 	return db(
-		'T.id',
-		'T.name',
-		'T.task_status',
+		'T.ID',
 		'P.name as ProjectName',
-		'P.description'
+		'P.description',
+		'T.description',
+		'T.task_status'
 	)
 		.from('Tasks as T')
-		.join('projects as P', 'P.id', 'T.projectID');
+		.join('Projects as P', 'P.id', 'T.projectID');
 };
 
 findTaskDetailed();

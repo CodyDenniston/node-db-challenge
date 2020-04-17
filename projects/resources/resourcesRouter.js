@@ -59,8 +59,8 @@ module.exports = router;
 function validateResource(req, res, next) {
 	const item = req.body;
 	if (item.name) {
-		Resources.insert(req.body)
-			.then(Resource => {
+		Resource.insert(req.body)
+			.then(resource => {
 				req.resource = resource;
 				console.log(resource);
 				next();

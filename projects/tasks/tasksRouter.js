@@ -81,7 +81,7 @@ module.exports = router;
 
 function validateTask(req, res, next) {
 	const item = req.body;
-	if (item.description && !item.task_status && item.projectID) {
+	if (item.description && item.task_status && item.projectID) {
 		console.log(item);
 		Tasks.insert(req.body)
 			.then(task => {

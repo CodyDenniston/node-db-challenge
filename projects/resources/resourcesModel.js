@@ -27,6 +27,7 @@ const remove = id => {
 
 module.exports = {
 	find,
+	findById,
 	insert,
 	update,
 	remove,
